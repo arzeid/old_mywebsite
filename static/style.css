@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Mono|PT+Sans|Trirong');
+
+body        { background: white; margin: 0; padding: 0; height:100%;}
+body, input { font-family: 'PT Sans', sans-serif;
+              font-weight: 300; font-size: 18px; }
+.box        { width: 500px; margin: auto; padding: 20px;
+              background: white; box-shadow: 0 1px 4px #BED1D4;
+              border-radius: 2px; height: 200px}
+h1 a           { text-decoration: none; color: black;}
+
+h2, h3      { margin: 0; color: #11557C; }
+h2 a  { text-decoration: none; color: #11557C;}
+h2          { text-align: center; padding-bottom: 0px;}
+h3          { font-weight: normal; font-size: 24px; text-align: left; padding-bottom: 0px;}
+.link div   { white-space: nowrap; overflow: hidden;
+              text-overflow: ellipsis;}
+.error      { background: red; padding: 3px 8px; color: black;
+              font-size: 0.9em; border-radius: 7px;}
+.urlinput   { width: 358px; }
+
+
+#appname   { font-family: 'Nova Mono', monospace;
+             font-weight: 300; color: #b300b3; text-align: center;
+             padding: 0; }
+
+h1          { text-align: center; font-family: 'Trirong', monospace; font-weight: 300;
+               text-align: center; padding:0; margin:0; display:block; padding-top: 50px;}
+
+/*DL, DT, DD TAGS LIST DATA*/
+dl {
+    margin-bottom:0px;
+}
+ 
+dl dt {
+    float:left;
+    margin-right:5px; 
+    padding:0px;  
+    width:100px; 
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+ul.topnav li, li.dropdown {display: inline-block;  font-weight: 500;}
+
+
+
+ul.topnav li a, .dropbtn {
+    display: block;
+    text-align: center;
+    padding: 0px 14px;
+    text-decoration: none;
+    color: #4d4d4d;
+    
+}
+
+
+ul.topnav li a:hover:not(.active) {color: black;}
+
+
+.topnav {
+    font-family: 'Trirong', monospace;
+    font-size: 14px;
+    float:center;
+    text-align:center;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    float:center;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+/*
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+*/
+.dropdown-content-show {
+    display: block;
+}
+
+@media screen and (max-width: 500px){
+    ul.topnav li {display: block; padding-bottom: 0px;}
+    .dropdown-content { position: relative; }
+}
+
+.vertical-space{
+    margin:30px;
+}
+
+html, body {height: 100%;}
+
+#container {min-height: 100%;}
+
+#body {overflow:auto;
+	padding-bottom: 50px;}  /* must be same height as the footer */
+
+#footer {
+    position: relative;
+	margin-top: -50px; /* negative value of footer height */
+	height: 50px;
+	clear:both;
+    text-align: center;
+    font-family: 'Trirong', monospace;
+    font-size: 14px;
+}
+
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
+#header *:focus{outline:0;}

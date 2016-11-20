@@ -1,0 +1,70 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} Abdelrahmein Zeid</title>
+<link rel=stylesheet href=/static/style.css type=text/css>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/javascript/css_engine.js"></script>
+</head>
+
+<div id="container">
+    <div id="header">
+
+        <h1><a href=/ id="logo">Abdelrahmein Zeid</a></h1>
+        <hr/>
+        <ul class="topnav">
+            <li>
+                <a href="https://drive.google.com/file/d/0B7CoVsAaa3azazBwNGhuNXVYY0U/view?usp=sharing" 
+                   target="_blank">
+                    Resume
+                </a>
+            </li>
+            <li><a href="/">Contact</a></li>
+
+            <li><a href="/shortly">Shortly</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Dropdown &#9662;</a>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+            </li>
+            <li><a href="/">About</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Dropdown2 &#9662;</a>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Dropdown3 &#9662;</a>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+            </li>
+
+        </ul>
+        <hr/>
+    </div>
+    
+    <div id="body">
+        
+        <div class="vertical-space"></div>
+
+        {% block page %}{% endblock %}
+        
+    </div>
+</div>    
+
+<div id="footer">
+    <hr/>
+    
+    
+    This is the footer
+    
+    
+</div>

@@ -1,0 +1,14 @@
+{% extends "shortly.html" %}
+{% block title %}Create New Short URL -{% endblock %}
+{% block body %}
+  <h3>Submit URL</h3>
+  <form action="" method=post>
+    
+    <p>URL:
+      <input type=text name=url value="{{ url }}" class=urlinput>
+      <input type=submit value="Shorten">
+    {% if error %}
+      <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+  </form>
+{% endblock %}
