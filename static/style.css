@@ -3,20 +3,41 @@
 body        { background: white; margin: 0; padding: 0; height:100%;}
 body, input { font-family: 'PT Sans', sans-serif;
               font-weight: 300; font-size: 18px; }
-.box        { width: 500px; margin: auto; padding: 20px;
-              background: white; box-shadow: 0 1px 4px #BED1D4;
-              border-radius: 2px; height: 200px}
+.box        { 
+    /*width: 400px;*/
+    width: 80%;
+    margin: auto; 
+    padding: 20px;
+    background: white; 
+    box-shadow: 0 1px 4px #BED1D4;
+    border-radius: 2px; 
+    height: 180px;
+}
 h1 a           { text-decoration: none; color: black;}
-
+a           {text-decoration: none; /* Gets rid of dirty default underline */}
 h2, h3      { margin: 0; color: #11557C; }
 h2 a  { text-decoration: none; color: #11557C;}
 h2          { text-align: center; padding-bottom: 0px;}
-h3          { font-weight: normal; font-size: 24px; text-align: left; padding-bottom: 0px;}
+h3          { font-weight: normal; font-size: 24px; text-align: center; padding-bottom: 0px;}
 .link div   { white-space: nowrap; overflow: hidden;
               text-overflow: ellipsis;}
 .error      { background: red; padding: 3px 8px; color: black;
-              font-size: 0.9em; border-radius: 7px;}
-.urlinput   { width: 358px; }
+              border-radius: 7px; text-align: center;}
+
+.urlinput   { 
+    /*width: 200px; */
+    width: 100%;
+    min-width: 50px;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    text-align: center;
+}
+
+.urlinput-button{
+    width: 100%;
+    min-width: 88px;
+}
 
 
 #appname   { font-family: 'Nova Mono', monospace;
@@ -109,13 +130,17 @@ ul.topnav li a:hover:not(.active) {color: black;}
     display: block;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 680px){
     ul.topnav li {display: block; padding-bottom: 0px;}
     .dropdown-content { position: relative; }
 }
 
 .vertical-space{
     margin:30px;
+}
+
+.error-space{
+    margin:65px;
 }
 
 html, body {height: 100%;}
@@ -145,4 +170,8 @@ body:before {
 	margin-top:-32767px;/
 }
 
-#header *:focus{outline:0;}
+#header *, #footer *:focus{outline:0;}
+
+.social-icons{
+    height: 28px;
+}
