@@ -15,9 +15,9 @@ body, input { font-family: 'PT Sans', sans-serif;
 }
 h1 a           { text-decoration: none; color: black;}
 a           {text-decoration: none; /* Gets rid of dirty default underline */}
-h2, h3      { margin: 0; color: #11557C; }
+h2, h3      { margin: 0; color: black; font-weight: 100; font-family: 'Trirong', monospace;}
 h2 a  { text-decoration: none; color: #11557C;}
-h2          { text-align: center; padding-bottom: 0px;}
+h2          { text-align: center; padding:0;}
 h3          { font-weight: normal; font-size: 24px; text-align: center; padding-bottom: 0px;}
 .link div   { white-space: nowrap; overflow: hidden;
               text-overflow: ellipsis;}
@@ -111,6 +111,7 @@ ul.topnav li a:hover:not(.active) {color: black;}
     background-color: #f9f9f9;
     min-width: 100px;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    margin-top: 12px;
 }
 
 .dropdown-content a {
@@ -130,13 +131,13 @@ ul.topnav li a:hover:not(.active) {color: black;}
     display: block;
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 400px){
     ul.topnav li {display: block; padding-bottom: 0px;}
-    .dropdown-content { position: relative; }
+    .dropdown-content { position: relative; margin-top: 0px;}
 }
 
 .vertical-space{
-    margin:30px;
+    margin:10px;
 }
 
 .error-space{
@@ -147,8 +148,11 @@ html, body {height: 100%;}
 
 #container {min-height: 100%;}
 
-#body {overflow:auto;
-	padding-bottom: 50px;}  /* must be same height as the footer */
+#body {
+    overflow:auto;
+	padding-bottom: 50px;
+    
+}  /* must be same height as the footer */
 
 #footer {
     position: relative;
@@ -158,6 +162,7 @@ html, body {height: 100%;}
     text-align: center;
     font-family: 'Trirong', monospace;
     font-size: 14px;
+    background: white; 
 }
 
 
@@ -174,4 +179,8 @@ body:before {
 
 .social-icons{
     height: 28px;
+    opacity: 1;
 }
+
+.social-icons:hover {opacity: 0.4;}
+

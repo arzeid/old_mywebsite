@@ -7,6 +7,7 @@ from werkzeug.exceptions import HTTPException, NotFound
 from werkzeug.wsgi import SharedDataMiddleware
 from werkzeug.utils import redirect
 from jinja2 import Environment, FileSystemLoader
+from sqlite3 import dbapi2 as sqlite3
 
 class Shortly(object):
 
@@ -36,7 +37,7 @@ class Shortly(object):
     
     def on_home_page(self, request):
         if request.method == 'GET':
-            return self.render_template('layout.html')
+            return self.render_template('home.html')
     
     
     def on_new_url(self, request):
