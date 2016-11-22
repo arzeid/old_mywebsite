@@ -1,28 +1,37 @@
-@import url('https://fonts.googleapis.com/css?family=Nova+Mono|PT+Sans|Trirong');
+@import url('https://fonts.googleapis.com/css?family=Trirong|Open+Sans|Raleway');
 
-body        { background: white; margin: 0; padding: 0; height:100%;}
-body, input { font-family: 'PT Sans', sans-serif;
-              font-weight: 300; font-size: 18px; }
+h1,h2,h3    { color: black; font-family: 'Trirong', serif;
+              margin: 0; text-align: center; padding:0;     }
+
+h1 a,h2 a,h3 a  {color: black; text-decoration: none;}
+
+h1  { font-weight: 300; padding-top: 50px;}
+h2  { font-weight: 200;}
+h3  { font-weight: 100;}
+
+body, input { font-family: 'Raleway', sans-serif; font-weight: 50;}
+
+body        { background: white; margin: 0; padding: 0; height:100%; }
+
+
 .box        { 
-    /*width: 400px;*/
+    /*
+    width: 80%;
+    height: 180px;
+    */
     width: 80%;
     margin: auto; 
     padding: 20px;
     background: white; 
-    box-shadow: 0 1px 4px #BED1D4;
-    border-radius: 2px; 
-    height: 180px;
+    /*box-shadow: 0 1px 4px #BED1D4;
+    border-radius: 2px; */
+    
 }
-h1 a           { text-decoration: none; color: black;}
-a           {text-decoration: none; /* Gets rid of dirty default underline */}
-h2, h3      { margin: 0; color: black; font-weight: 100; font-family: 'Trirong', monospace;}
-h2 a  { text-decoration: none; color: #11557C;}
-h2          { text-align: center; padding:0;}
-h3          { font-weight: normal; font-size: 24px; text-align: center; padding-bottom: 0px;}
+
 .link div   { white-space: nowrap; overflow: hidden;
               text-overflow: ellipsis;}
-.error      { background: red; padding: 3px 8px; color: black;
-              border-radius: 7px; text-align: center;}
+.error      { background: red; padding: 0px 0px; color: black;
+              border-radius: 3px; text-align: center;}
 
 .urlinput   { 
     /*width: 200px; */
@@ -40,12 +49,7 @@ h3          { font-weight: normal; font-size: 24px; text-align: center; padding-
 }
 
 
-#appname   { font-family: 'Nova Mono', monospace;
-             font-weight: 300; color: #b300b3; text-align: center;
-             padding: 0; }
 
-h1          { text-align: center; font-family: 'Trirong', monospace; font-weight: 300;
-               text-align: center; padding:0; margin:0; display:block; padding-top: 50px;}
 
 /*DL, DT, DD TAGS LIST DATA*/
 dl {
@@ -100,7 +104,7 @@ ul.topnav li a:hover:not(.active) {color: black;}
     text-align:center;
     margin: 0;
     padding: 0;
-    
+    background: white;
 }
 
 
@@ -131,49 +135,26 @@ ul.topnav li a:hover:not(.active) {color: black;}
     display: block;
 }
 
-@media screen and (max-width: 400px){
-    ul.topnav li {display: block; padding-bottom: 0px;}
-    .dropdown-content { position: relative; margin-top: 0px;}
-}
+
 
 .vertical-space{
     margin:10px;
 }
 
-.error-space{
-    margin:65px;
-}
-
+/* Sticky Footer CSS */
+/* "body padding-bottom"="footer height"=-"footer margin-top" */
 html, body {height: 100%;}
-
 #container {min-height: 100%;}
-
-#body {
-    overflow:auto;
-	padding-bottom: 50px;
-    
-}  /* must be same height as the footer */
-
-#footer {
-    position: relative;
-	margin-top: -50px; /* negative value of footer height */
-	height: 50px;
-	clear:both;
-    text-align: center;
-    font-family: 'Trirong', monospace;
-    font-size: 14px;
-    background: white; 
-}
-
-
+#body      {overflow:auto; padding-bottom: 50px;}
+#footer    {position: relative; margin-top: -50px; height: 50px;
+	        clear:both; }
 /*Opera Fix*/
-body:before {
-	content:"";
-	height:100%;
-	float:left;
-	width:0;
-	margin-top:-32767px;/
-}
+body:before {content:""; height:100%; float:left; width:0;
+	         margin-top:-32767px;/}
+/* End of Sticky Footer CSS */
+
+#footer     {text-align: center; background: white;}
+#footer a   {text-decoration: none;}
 
 #header *, #footer *:focus{outline:0;}
 
@@ -184,3 +165,7 @@ body:before {
 
 .social-icons:hover {opacity: 0.4;}
 
+@media screen and (max-width: 400px){
+    ul.topnav li {display: block; padding-bottom: 0px;}
+    .dropdown-content { position: relative; margin-top: 0px;}
+}

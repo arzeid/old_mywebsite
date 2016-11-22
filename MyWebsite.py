@@ -18,9 +18,9 @@ class Shortly(object):
                                      autoescape=True)
         self.url_map = Map([
             Rule('/', endpoint='home_page'),
-            Rule('/shortly/', endpoint='new_url'),
-            Rule('/shortly/<short_id>', endpoint='follow_short_link'),
-            Rule('/shortly/<short_id>+', endpoint='short_link_details')
+            Rule('/shorten/', endpoint='new_url'),
+            Rule('/shorten/<short_id>', endpoint='follow_short_link'),
+            Rule('/shorten/<short_id>+', endpoint='short_link_details')
         ])
 
     def render_template(self, template_name, **context):
@@ -46,10 +46,10 @@ class Shortly(object):
         if request.method == 'POST':
             url = request.form['url']
             if not is_valid_url(url):
-                error = 'Please enter a valid URL'
+                error = 'Invalid URL'
             else:
                 short_id = self.insert_url(url)
-                return redirect('/shortly/%s+' % short_id)
+                return redirect('/shorten/%s+' % short_id)
         return self.render_template('new_url.html', error=error, url=url)
     
     def on_follow_short_link(self, request, short_id):
