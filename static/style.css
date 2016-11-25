@@ -13,13 +13,14 @@ body, input { font-family: 'Raleway', sans-serif; font-weight: 50;}
 
 body        { background: white; margin: 0; padding: 0; height:100%; }
 
+p   { margin: 0; padding:4px;     }
 
 .box        { 
     /*
     width: 80%;
     height: 180px;
     */
-    width: 80%;
+    width: 85%;
     margin: auto; 
     padding: 20px;
     background: white; 
@@ -28,8 +29,7 @@ body        { background: white; margin: 0; padding: 0; height:100%; }
     
 }
 
-.link div   { white-space: nowrap; overflow: hidden;
-              text-overflow: ellipsis;}
+
 .error      { background: red; padding: 0px 0px; color: black;
               border-radius: 3px; text-align: center;}
 
@@ -48,12 +48,17 @@ body        { background: white; margin: 0; padding: 0; height:100%; }
     min-width: 88px;
 }
 
+#url_count{
+    text-align:center;
+}
 
-
+.shorten_link   { white-space: nowrap; overflow: hidden;
+                  text-overflow: ellipsis;}
 
 /*DL, DT, DD TAGS LIST DATA*/
 dl {
     margin-bottom:0px;
+    
 }
  
 dl dt {
@@ -61,6 +66,11 @@ dl dt {
     margin-right:5px; 
     padding:0px;  
     width:100px; 
+}
+
+.row{
+    margin:0 auto;
+    width: 80%;
 }
 
 .truncate {

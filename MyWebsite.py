@@ -1,6 +1,6 @@
 import os
 import redis
-import urlparse
+import re
 from werkzeug.wrappers import Request, Response
 from werkzeug.routing import Map, Rule
 from werkzeug.exceptions import HTTPException, NotFound
@@ -50,17 +50,20 @@ class Shortly(object):
             else:
                 short_id = self.insert_url(url)
                 return redirect('/shorten/%s+' % short_id)
-        return self.render_template('new_url.html', error=error, url=url)
+        url_count = self.redis.get('last-url-id')
+        if not url_count:
+            url_count = 0
+        return self.render_template('new_url.html', error=error, url=url, url_count=url_count)
     
     def on_follow_short_link(self, request, short_id):
-        link_target = self.redis.get('url-target:' + short_id)
+        link_target = self.redis.get('short-link:' + short_id)
         if link_target is None:
             raise NotFound()
         self.redis.incr('click-count:' + short_id)
         return redirect(link_target)
 
     def on_short_link_details(self, request, short_id):
-        link_target = self.redis.get('url-target:' + short_id)
+        link_target = self.redis.get('short-link:' + short_id)
         if link_target is None:
             raise NotFound()
         click_count = int(self.redis.get('click-count:' + short_id) or 0)
@@ -76,7 +79,7 @@ class Shortly(object):
             return short_id
         url_num = self.redis.incr('last-url-id')
         short_id = base36_encode(url_num)
-        self.redis.set('url-target:' + short_id, url)
+        self.redis.set('short-link:' + short_id, url)
         self.redis.set('reverse-url:' + url, short_id)
         return short_id
 
@@ -89,8 +92,24 @@ class Shortly(object):
         return self.wsgi_app(environ, start_response)
 
 def is_valid_url(url):
-    parts = urlparse.urlparse(url)
-    return parts.scheme in ('http', 'https')
+    #url parse alternative implementation
+    #import urlparse
+    #parts = urlparse.urlparse(url)
+    #return parts.scheme in ('http', 'https')
+    
+    url_regex = re.compile(
+        r'^((?:http|ftp)s?://)' # http:// or https://
+        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
+        r'localhost|' #localhost...
+        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or ip
+        r'(?::\d+)?' # optional port
+        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+    is_valid = re.match(url_regex,url)
+    if is_valid:
+        return True
+    else:
+        return False
+
 
 def base36_encode(number):
     assert number >= 0, 'positive integer required'
