@@ -3,18 +3,18 @@
 {% block body %}
   <h3>URL Information</h3>
   <dl>
-    <div class=row>
+    <div class="row">
         <dt>Short link:
         <dd>
-            <div class=shorten_link>
-            <a href="/shorten/{{ short_id }}" target="_blank">azeid.com/{{ short_id }}</a>
+            <div class="shorten_link">
+            <a href="/shorten/{{ short_id }}" target="_blank" id="short_link">azeid.com/{{ short_id }}</a>
             </div>
     </div>
-    <div class=row>
+    <div class="row">
         <dt>Full link:
-        <dd><div class=shorten_link>{{ link_target }}</div>
+        <dd><div class="shorten_link">{{ link_target }}</div>
     </div>
-    <div class=row>
+    <div class="row">
         <dt>Click count:
         <dd>{{ click_count }}
     </div>

@@ -5,6 +5,7 @@ $(document).ready(function(){
         $(this).siblings(".dropdown").find(".dropdown-content").hide();
         $(this).find(".dropdown-content").toggle();
     });
+    
 });
 
 
