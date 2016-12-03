@@ -100,11 +100,18 @@ ul.topnav li a, .dropbtn {
     padding: 0px 14px;
     text-decoration: none;
     color: #4d4d4d;
-    
+    min-width: 65px;
+    border-right-color: white; border-right-style: solid; border-right-width: 1px;
+    border-left-color: white; border-left-style: solid; border-left-width: 1px;
 }
 
+.dropbtn:focus{
+    color: black;
+}
 
-ul.topnav li a:hover:not(.active) {color: black;}
+ul.topnav li a:hover:not(.active) {
+    color: black;
+}
 
 
 .topnav {
@@ -123,7 +130,7 @@ ul.topnav li a:hover:not(.active) {color: black;}
     position: absolute;
     float:center;
     background-color: #f9f9f9;
-    min-width: 100px;
+    min-width: 65px;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     margin-top: 12px;
 }
