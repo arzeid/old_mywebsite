@@ -99,8 +99,11 @@ ul.topnav li a, .dropbtn {
     text-align: center;
     padding: 0px 14px;
     text-decoration: none;
-    color: #4d4d4d;
+    /*color: #4d4d4d;*/
+    color: black;
+    opacity: 0.4;
     min-width: 65px;
+    
     border-right-color: white; border-right-style: solid; border-right-width: 1px;
     border-left-color: white; border-left-style: solid; border-left-width: 1px;
 }
@@ -110,18 +113,21 @@ ul.topnav li a, .dropbtn {
 }
 
 ul.topnav li a:hover:not(.active) {
-    color: black;
+    
+    opacity: 1;
 }
 
 
 .topnav {
     font-family: 'Trirong', monospace;
-    font-size: 14px;
+    /*font-size: 14px;*/
     float:center;
     text-align:center;
     margin: 0;
     padding: 0;
     background: white;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
 
 
@@ -132,7 +138,7 @@ ul.topnav li a:hover:not(.active) {
     background-color: #f9f9f9;
     min-width: 65px;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
-    margin-top: 12px;
+    margin-top: 2px;
 }
 
 .dropdown-content a {
@@ -160,29 +166,53 @@ ul.topnav li a:hover:not(.active) {
 
 /* Sticky Footer CSS */
 /* "body padding-bottom"="footer height"=-"footer margin-top" */
-html, body {height: 100%;}
-#container {min-height: 100%;}
-#body      {overflow:auto; padding-bottom: 50px;}
-#footer    {position: relative; margin-top: -50px; height: 50px;
-	        clear:both; }
-/*Opera Fix*/
-body:before {content:""; height:100%; float:left; width:0;
-	         margin-top:-32767px;/}
+html, body { height: 100%;}
+#container { min-height: 100%;}
+#body      { overflow:auto;   padding-bottom: 38px; }
+footer     { position:relative; margin-top: -38px; height: 37px; clear:both; }
+/* Opera Fix */
+body:before {content:"";height:100%;float:left;width:0;margin-top:-32767px;/}
 /* End of Sticky Footer CSS */
+ footer {
+            background-color: #333;
+            width: 100%;
+            bottom: 0;
+            border-top: 1px solid black;
+            text-align: center; 
+            background: white;
+        }
+footer a   {text-decoration: none;}
 
-#footer     {text-align: center; background: white;}
-#footer a   {text-decoration: none;}
+.footer-margin {margin:5px;}
 
-#header *, #footer *:focus{outline:0;}
+#header *, footer *:focus{outline:0;}
 
-.social-icons{
-    height: 28px;
-    opacity: 1;
+.social-icons{ height: 28px; opacity: 0.5; }
+.social-icons:hover {opacity: 1;}
+
+
+/* Mobile CSS */
+@media screen and (max-width: 500px){
+    ul.topnav li        { display: block; padding-bottom: 0px; }
+    .dropdown-content   { position: relative; margin-top: 0px; }
+    .vertical-space     { margin: 0; padding:0; }
+    .box                { padding:0; }
+    h1                  { padding-top:0; }
 }
 
-.social-icons:hover {opacity: 0.4;}
-
-@media screen and (max-width: 400px){
-    ul.topnav li {display: block; padding-bottom: 0px;}
-    .dropdown-content { position: relative; margin-top: 0px;}
+@media screen and (max-height: 400px){
+    .vertical-space { margin: 0; padding:0;}
+    .box            { padding:0; }
+    h1              { padding-top:0;}
 }
+
+@media (max-width: 500px) {
+    html  { font-size: 20px; }
+    input { font-size: 16px; }
+}
+
+@media (max-width: 400px) {
+    html  { font-size: 24px; }
+    input { font-size: 20px; }
+}
+/* End of Mobile CSS */

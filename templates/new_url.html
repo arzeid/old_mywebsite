@@ -11,7 +11,9 @@
              placeholder="Your URL Here">
         <input type=submit value="Shorten" class=urlinput-button>
         {% if error %}
-        <div class=error>Error: {{ error }} </div>
+        <div class="error">Error: {{ error }} </div>
+        {% else %}
+        <div class="error-space"> </div>
         {% endif %}
     </form>
 {% endblock %}
